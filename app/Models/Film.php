@@ -101,7 +101,7 @@ class Film extends Eloquent
 
 	public function scopeAmountOfMoviesWithCategory($query,$category){
 		return $this->whereHas('filmCategories.category',function($query) use ($category){
-			$query->where('name',$category)->get();
+			$query->where('name',$category);
 		})->count();
 	}
 	

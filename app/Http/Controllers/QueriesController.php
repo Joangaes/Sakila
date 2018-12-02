@@ -53,7 +53,7 @@ class QueriesController extends Controller
         }
 
 
-        //Clientes que rentaron una pelicula
+        //Veces que se ha rentado una pelicula
         for($i = 0;$i<5;$i++){
             
             $executionStartTime = microtime(true);
@@ -64,7 +64,7 @@ class QueriesController extends Controller
             $amount = $this->mongoCustomer->amountOfTimesMovieIsRentedSQL('PATIENT SISTER');
             $executionEndTime = microtime(true);
             $query['sql'] = $executionEndTime - $executionStartTime;
-            $results['query2'][] = $query;
+            $results['query3'][] = $query;
         }
 
         //Peliculas de comedia
@@ -77,10 +77,10 @@ class QueriesController extends Controller
             //Peliculas en las que aparece Penelope Guiness
             $executionStartTime = microtime(true);
             $result = $this->mongoFilms->amountOfMoviesInCategorySQL('Comedy');
-            dd($result);
+
             $executionEndTime = microtime(true);
             $queries['sql'] = $executionEndTime - $executionStartTime;
-            $results['query3'][] = $queries;
+            $results['query4'][] = $queries;
         }
 
 
